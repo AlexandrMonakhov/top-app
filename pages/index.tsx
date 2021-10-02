@@ -33,7 +33,7 @@ export default function Home(): JSX.Element {
         5
       </Tag>
 
-      <Rating rating={4} setRating={setRating} isEditable />
+      <Rating rating={rating} setRating={setRating} isEditable />
     </>
   );
 }

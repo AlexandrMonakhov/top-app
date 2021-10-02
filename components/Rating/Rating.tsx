@@ -22,15 +22,18 @@ export const Rating = ({
 
   const constructRating = (currentRating: number) => {
     const updatedArray = ratingArray.map((r: JSX.Element, i: number) => (
-      <StarIcon
-        className={cn(styles.star, {
-          [styles.filled]: i < currentRating,
-          [styles.editable]: isEditable,
-        })}
+      <span
         onMouseEnter={() => changeDisplay(i + 1)}
         onMouseLeave={() => changeDisplay(rating)}
-        onClick={() => changeRating(i + 1)}
-      />
+      >
+        <StarIcon
+          className={cn(styles.star, {
+            [styles.filled]: i < currentRating,
+            [styles.editable]: isEditable,
+          })}
+          onClick={() => changeRating(i + 1)}
+        />
+      </span>
     ));
     setRatingArray(updatedArray);
   };
